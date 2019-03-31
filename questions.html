@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Question Search</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/extra.css" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <nav id="siteNav" class="navbar" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                	Spatial Property Search
+                </a>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="home.html#about">About</a>
+                    </li>
+                
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+	
+	<form name="insert" action="question_search.php" method="POST" >
+    <section class="sec1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">Housing</h2>
+                    
+                    <div class ="question">
+                    <p>Question 1. What kind of home are you looking for? <p>
+                    <div style="float: left">Flats/Apartments/Bedsits</div>
+                    <div style="float: right">Houses/Bungalows</div>
+                    <div style="margin: 0 auto; width: 100px;">Either</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="red" name="housing_q1">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 2. A new house is perferable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="red" name="housing_q2">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 3. A large home is desired.<p>
+                    <p style="font-size: 80%; margin-top: -10px;"> (Size based off bed room numbers)<p.>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="red" name="housing_q3">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 4. Are you looking to rent or buy? <p>
+                    <div style="float: left">Rent</div>
+                    <div style="float: right">Buy</div>
+                    <div style="margin: 0 auto; width: 100px;">Either</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="red" name="housing_q4">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 5. Is your budget high or low? <p>
+                    <p style="font-size: 80%; margin-top: -10px;"> (Average = €300,000 / €750 Rent)<p.>
+                    <div style="float: left">Low</div>
+                    <div style="float: right">High</div>
+                    <div style="margin: 0 auto; width: 100px;">Average</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="red" name="housing_q5">
+                    </div>
+                    
+                    <input type="hidden" name="housing_extra" value="0"  />
+                    <input id="toggle" type="checkbox" name="housing_extra" value="1" unchecked>
+  					<label for="toggle">More Questions In This Section</label>
+  					<div id="expand"><section>
+      				
+      				<div class ="question">
+                    <p>Extra Question 1. Housing heated by gas or electricity is preferable.<p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="red" name="housing_extra_1">
+                    </div>
+                    <div class ="question">
+                    <p>Extra Question 2.  Housing with a connection to mains water is preferable<p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="red" name="housing_extra_2">
+                    </div>
+
+                    </div>
+    				</section>
+ 					 </div>
+                    
+					
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">Location</h2>
+                    <div class ="question">
+                    <p>Question 6. Are you looking for an area with a high population? <p>
+                     <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="green" name="location_q1">
+                    </div>
+
+                    <div class ="question">
+                    <p>Question 7. A low level in crime is important. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="green" name="location_q2">
+                    </div>
+                    
+                     <div class ="question">
+                    <p>Question 8. An area with a high employment rate is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="green" name="location_q3">
+                    </div>
+                    
+                     <div class ="question">
+                    <p>Question 9. An area with a high level of education is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="green" name="location_q4">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 10. An area with Professional, managerial and technical workers is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="green" name="location_q5">
+                    </div>
+               	
+  					
+               		<input type="hidden" name="location_extra" value="0"  />
+                    <input id="toggle1" type="checkbox" name="location_extra" value="1" unchecked>
+  					<label for="toggle1">More Questions In This Section</label>
+  					<div id="expand"><section>
+  					
+      				
+      				<div class ="question">
+                    <p>Extra Question 1. An area with high speed broadband is important.<p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="green" name="location_extra_1">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Extra Question 2. An area with agriculture, manual and unskilled workers is preferable.<p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="green" name="location_extra_2">
+                    </div>
+
+                    </div>
+    				</section>
+ 					 </div></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sec1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">Healthcare</h2>
+                    
+                    <div class ="question">
+                    <p>Question 11. An area with a hospital nearby is important. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="blue" name="healthcare_q1">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 12. An area with a doctor nearby is important. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="blue" name="healthcare_q2">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 13. An area with a pharmacy nearby is important. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="blue" name="healthcare_q3">
+                    </div>
+                    
+                    <input type="hidden" name="healthcare_extra" value="0"  />
+                    <input id="toggle2" type="checkbox" name="healthcare_extra" value="1" unchecked>
+  					<label for="toggle2">More Questions In This Section</label>
+  					<div id="expand"><section>
+      				
+      				<div class ="question">
+                    <p>Extra Question 1. An area with a dentist nearby is important. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="blue" name="healthcare_extra_1">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Extra Question 2. An area with a nursing home is important. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="blue" name="healthcare_extra_2">
+                    </div>
+
+                    </div>
+    				</section>
+ 					 </div>
+  		
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sec2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">Education</h2>
+                    <div class ="question">
+                    <p>Question 14. An area with primary and secondary schools nearby is important. <p>
+           			<div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="orange" name="education_q1">
+                    </div>
+
+                    <div class ="question">
+                    <p>Question 15. An area nearby a college or University would be desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="orange" name="education_q2">
+                    </div>
+                    
+                    <input type="hidden" name="education_extra" value="0"  />
+                    <input id="toggle3" type="checkbox" name="education_extra" value="1" unchecked>
+  					<label for="toggle3">More Questions In This Section</label>
+  					<div id="expand"><section>
+      				
+      				<div class ="question">
+                    <p>Extra Question 1. An area with pre-schools nearby is important. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="orange" name="education_extra_1">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Extra Question 2. An area with a library nearby would be desirable  <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="orange" name="education_extra_2">
+                    </div>
+
+
+                    </div>
+    				</section>
+ 					 </div></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sec1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">Amenities</h2>
+                    
+                    <div class ="question">
+                    <p>Question 16. An area with leisure activities nearby is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="purple" name="amenities_q1">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 17. An area with sporting activities nearby is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="purple" name="amenities_q2">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 18. An area with bars / restaurants nearby is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="purple" name="amenities_q3">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 19. An area with grocery stores / supermarkets nearby is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="purple" name="amenities_q4">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 20. An area with Retail Stores nearby is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="purple" name="amenities_q5">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 21. An area with a tourist attractions nearby is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="purple" name="amenities_q6">
+                    </div>
+                    
+                    <input type="hidden" name="amenities_extra" value="0"  />
+                    <input id="toggle4" type="checkbox" name="amenities_extra" value="1" unchecked>
+  					<label for="toggle4">More Questions In This Section</label>
+  					<div id="expand"><section>
+      				
+      				<div class ="question">
+                    <p>Extra Question 1. An area with a fire station garage nearby is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="purple" name="amenities_extra_1">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Extra Question 2. An area with a post office nearby is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="purple" name="amenities_extra_2">
+                    </div>
+                    
+                    </div>
+    				</section>
+ 					 </div>
+  		
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <section class="sec2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">People in the area</h2>
+                    <div class ="question">
+                    <p>Question 22. An area with a high rate of Irish Speakers is important.<p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gold" name="people_q1">
+                    </div>
+
+                    <div class ="question">
+                    <p>Question 23. Is the type of people in the area important? Select preferred type of people in area.<p>
+                    <div>
+                    <label class="checkbox-inline">
+                    <input type="hidden" name="people_q2_a" value="0" id="people_q2" />
+					<input type="checkbox" name="people_q2_a" value="1" id="people_q2"checked/> Families<br>
+					</label>
+					<label class="checkbox-inline">
+					<input type="hidden" name="people_q2_b" value="0" id="people_q2" />
+  					<input type="checkbox" name="people_q2_b" value="1" id="people_q2"checked/> Students<br>
+  					</label>
+  					<label class="checkbox-inline">
+  					<input type="hidden" name="people_q2_c" value="0" id="people_q2" />
+  					<input type="checkbox" name="people_q2_c" value="1" id="people_q2"checked/> Retired <br>
+  					</label>
+                    </div>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gold" name="people_q2">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 24. Is the cultural background of the area important? Select preferred cultural background of people in area<p>
+                  <div>
+
+                    <label class="checkbox-inline">
+                    <input type="hidden" name="people_q3_a" value="0" id="people_q3" />
+					<input type="checkbox" name="people_q3_a" value="1" id="people_q3" checked> White Irish<br>
+					</label>
+					<label class="checkbox-inline">
+					<input type="hidden" name="people_q3_b" value="0" id="people_q3" />
+  					<input type="checkbox" name="people_q3_b" value="1" id="people_q3" checked>White Irish Traveller <br>
+  					</label>
+  					<label class="checkbox-inline">
+  					<input type="hidden" name="people_q3_c" value="0" id="people_q3" />
+  					<input type="checkbox" name="people_q3_c" value="1" id="people_q3" checked> Other White <br>
+  					</label>
+  					<label class="checkbox-inline">
+  					<input type="hidden" name="people_q3_d" value="0" id="people_q3" />
+					<input type="checkbox" name="people_q3_d" value="1" id="people_q3" checked> Black or Black Irish<br>
+					</label>
+					<label class="checkbox-inline">
+					<input type="hidden" name="people_q3_e" value="0" id="people_q3" />
+  					<input type="checkbox" name="people_q3_e" value="1" id="people_q3" checked>Asian or Asian Irish <br>
+  					</label>
+  					<label class="checkbox-inline">
+  					<input type="hidden" name="people_q3_f" value="0" id="people_q3" />
+  					<input type="checkbox" name="people_q3_f" value="1" id="people_q3" checked > Other <br>
+  					</label>
+                    </div>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gold" name="people_q3">
+                    </div>
+
+                    <div class ="question">
+                    <p>Question 25. Is the religion of the area important?  Select the preferred religion of the area.  <p>
+                    <div>
+                    <div>
+                    <label class="checkbox-inline">
+                    <input type="hidden" name="people_q4_a" value="0" id="people_q4" />
+					<input type="checkbox" name="people_q4_a" value="1" id="people_q4" checked/> Catholic<br>
+					</label>
+					<label class="checkbox-inline">
+					<input type="hidden" name="people_q4_b" value="0" id="people_q4" />
+  					<input type="checkbox" name="people_q4_b" value="1" id="people_q4"checked/> Other Religon<br>
+  					</label>
+  					<label class="checkbox-inline">
+  					<input type="hidden" name="people_q4_c" value="0" id="people_q4" />
+  					<input type="checkbox" name="people_q4_c" value="1" id="people_q4"checked/> No Religon <br>
+  					</label>
+                    </div>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gold" name="people_q4">
+                    </div>
+                    
+                    <input type="hidden" name="people_extra" value="0"  />
+                    <input id="toggle5" type="checkbox" name="people_extra" value="1" unchecked>
+  					<label for="toggle5">More Questions In This Section</label>
+  					<div id="expand"><section>
+      				
+      				<div class ="question">
+                    <p>Extra Question 1. Is the general health of the area important? <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gold" name="people_extra_1">
+                    </div>
+                    
+    				</section>
+ 					 </div></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sec1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">Transport</h2>
+                    
+                    <div class ="question">
+                    <p>Question 26. An area with a lower average commute time is preferable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gray" name="transport_q1">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 27. High public transport usage in the area is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gray" name="transport_q2">
+                    </div>
+                    
+                    <div class ="question">
+                    <p>Question 28. A high number of public transport stops nearby. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gray" name="transport_q3">
+                    </div>
+                    
+                    <input type="hidden" name="transport_extra" value="0"  />
+                    <input id="toggle6" type="checkbox" name="transport_extra" value="1" unchecked>
+  					<label for="toggle6">More Questions In This Section</label>
+  					<div id="expand"><section>
+      				
+      				<div class ="question">
+                    <p>Extra Question 1. An area where households have two or more cares is desirable. <p>
+                    <div style="float: left">Disagree</div>
+                    <div style="float: right">Agree</div>
+                    <div style="margin: 0 auto; width: 100px;">Neutral</div>
+                    <input type="range" id="slider-input" min="1" max="100" value="50" class="gray" name="transport_extra_1">
+                    </div>
+                    
+                    </div>
+    				</section>
+ 					 </div>
+  		
+                </div>
+            </div>
+        </div>
+    </section>
+    
+	<section class="submit">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+				<button name="submit" type="submit" class="btn btn-primary btn-lg">Submit</button>				</div>
+            </form>
+        </div>
+    </section>
+    
+	
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+var url = document.URL;
+if(url.includes("#false")){
+alert("Address not contained within a small area! \nTry another address...");
+}
+</script>
+
+<style>
+      
+    </style>
+
+    <title>Compare Search</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/extra.css" rel="stylesheet">
+    
+
+ <script type="text/javascript" src="js/search_bar.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkGYgZre8mrlFj4o04BoAgQRsuwWI1Jac&libraries=places&callback=initMap"
+        async defer></script>
+
+</head>
+
+<body>
+
+    <nav id="siteNav" class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                	Spatial Property Search
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="home.html#about">About</a>
+                    </li>
+           
+                </ul>
+                
+            </div>
+        </div>
+
+	
+     <section class="sec1">
+     
+     <h1>Search for Similar Areas</h1>
+     <h4><br>Select an area that you would like to compare by entering an address down below</br><br></br></h4>
+
+     
+     <div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">
+          Enter an Irish address to compare areas!
+        </div>
+
+      </div>
+      <div id="pac-container">
+        <input class="text-search" id="pac-input" type="text"
+            placeholder="Enter a location">
+      </div>
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <img src="" width="16" height="16" id="place-icon">
+      <span id="place-name"  class="title"></span><br>
+      <span id="place-address"></span>
+    </div>
+    
+    <form name="insert" action="area_search.php" method="POST" >
+
+    <div>
+        <p>
+            <input style ="display: none" type="text" id="latitude" readonly="" name="latitude">
+        </p>
+        <p>
+            <input  style ="display: none" type="text" id="longitude" readonly="" name="longitude">
+        </p>
+    </div>
+    
+       
+    </section>
+
+    <section class="submit">
+        <div class="container">
+           <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+				<button name="submit" type="submit" class="btn btn-primary btn-lg">Submit</button>				
+				</div>
+            </form>
+            </div>
+        </div>
+    </section>
+    
+    
+
+</body>
+
+</html>

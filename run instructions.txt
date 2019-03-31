@@ -1,0 +1,12 @@
+The Database (database.pgsql) needs to be imported to a postgresql compatible database system 
+
+This can be imported by using the following command 
+psql -U postgres MapTest < database.pgsql
+
+Throughout the project the database was used in pgadmin with the following settings  
+"host=localhost port=5432 dbname=Maptest user=postgres password="
+
+The webpages use PHP so they need to be ran on an apache server
+
+Once both of these are running you can go to the home.html page which provides a link to the two search types
+Alternatively the search pages can be accessed directly by going to questions.html or compare.html
